@@ -3,12 +3,17 @@ const colors= require("colors");
 const dotenv= require("dotenv");
 const morgan = require("morgan");
 const transactions = require("./routes/transactions");
+const connectDb = require("./config/connectDb");
+
 dotenv.config({path:"./config/config.env"});
+
+connectDb();
 
 const app = express();
 
 const PORT = process.env.PORT || 5000; 
 
+app.use(express.json());
 app.use("/api/v1/transactions", transactions);
 
 app.listen(PORT, ()=>{
