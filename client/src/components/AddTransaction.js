@@ -14,7 +14,7 @@ export const AddTransaction = ()=>{
         e.preventDefault();
 
         const transaction = {
-            id : Math.floor(Math.random()*10000),
+            // id : Math.floor(Math.random()*10000),
             text,
             amount:JSON.parse(amount)
         }
